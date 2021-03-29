@@ -1,9 +1,19 @@
 pipeline {
-    agent any
+    agent docker
     stages {
         stage('build') {
             steps {
-                echo 'Hello World'
+                echo 'build'
+            }
+        }
+        stage('test') {
+            steps {
+                echo 'test'
+            }
+        }
+        stage('deliver') {
+            steps {
+                echo 'deliver'
             }
         }
     }
