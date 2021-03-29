@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent docker { image espressif/idf:latest }
     stages {
         stage('build') {
             steps {
