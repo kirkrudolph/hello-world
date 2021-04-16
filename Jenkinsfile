@@ -1,20 +1,11 @@
 pipeline {
-    agent { docker { image 'espressif/idf:latest' } }
-    stages {
-        stage('build') {
-            steps {
-                echo 'build'
-            }
-        }
-        stage('test') {
-            steps {
-                echo 'test'
-            }
-        }
-        stage('deliver') {
-            steps {
-                echo 'deliver'
-            }
-        }
+  agent any
+  stages {
+    stage('build') {
+      steps {
+        sh 'docker run --rm -v $PWD:/project -w /project espressif/idf idf.py build'
+      }
     }
+
+  }
 }
