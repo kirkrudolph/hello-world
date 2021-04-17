@@ -6,11 +6,6 @@ pipeline {
         sh 'docker run --rm -v $PWD:/project -w /project espressif/idf idf.py build'
       }
     }
-    stage('test') {
-      steps {
-        echo 'testing'
-      }
-    }
 
   }
 }
